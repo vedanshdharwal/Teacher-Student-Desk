@@ -26,9 +26,9 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav  class="navbar navbar-light" style="background-color: #4DD0E1 ;">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">CollegeERP</a>
+        <a class="navbar-brand" href="{% url 'index' %}"><h3>TEACHER - STUDENT DESK</h3></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,8 +49,8 @@
     <div class="container">
 
       <!-- Jumbotron Header -->
-      <header class="jumbotron my-4">
-        <h1 class="display-3 text-capitalize">Welcome {{ request.user.teacher.name }}</h1>
+      <header class="jumbotron my-4" style="background-color:#E0F7FA; height:100px ; text-align:center ; padding:20px">
+        <h1 class="display-4 text-capitalize">Welcome {{ request.user.teacher.name }}</h1>
 {#        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>#}
 {#        <a href="#" class="btn btn-primary btn-lg">Call to action!</a>#}
       </header>
@@ -58,15 +58,15 @@
       <!-- Page Features -->
       <div class="row text-center">
 
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col">
           <div class="card">
+          <h4 class="card-title">Attendance</h4>
               <a href="{% url 't_clas' request.user.teacher.id 1 %}">
-                <img class="card-img-top" src="{% static 'info/images/attendance2.jpg' %}" alt="">
+                <img class="card-img-top" src="{% static 'info/images/3.png' %}" alt="">
               </a>
               <div class="card-body">
-              <h4 class="card-title">Attendance</h4>
-              <p class="card-text">Enter the attendance of the students based on the class they are in. There is also
-                  the provision to edit the attendance of a whole class or student individually.</p>
+              
+              
             </div>
             <div class="card-footer">
                 <a class="btn btn-primary" role="button" href="{% url 't_clas' request.user.teacher.id 1 %}"> Enter Attendance</a>
@@ -74,15 +74,15 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
+       <div class="col">
           <div class="card">
+           <h4 class="card-title">Marks</h4>
               <a href="{% url 't_clas' request.user.teacher.id 2 %}">
-                <img class="card-img-top" src="{% static 'info/images/marks.jpg' %}" alt="">
+                <img class="card-img-top" src="{% static 'info/images/2.png' %}" alt="">
               </a>
               <div class="card-body">
-              <h4 class="card-title">Marks</h4>
-              <p class="card-text">Enter the marks of the students based on the class they are in. This includes
-                    Internals, events and SEE. The marks of the students can also be edited.</p>
+             
+              
             </div>
             <div class="card-footer">
                 <a class="btn btn-primary" role="button" href="{% url 't_clas' request.user.teacher.id 2 %}">Enter Marks</a>
@@ -90,15 +90,15 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col">
           <div class="card">
+          <h4 class="card-title">TimeTable</h4>
               <a href="{% url 't_timetable' request.user.teacher.id %}">
-                <img class="card-img-top" src="{% static 'info/images/timetable.png' %}" alt="">
+                <img class="card-img-top" src="{% static 'info/images/1.png' %}" alt="">
               </a>
               <div class="card-body">
-              <h4 class="card-title">TimeTable</h4>
-              <p class="card-text">View the timetable in a tabular form. For a particular class, it specifies a
-                  list of teachers who handle the same class that are free for that time slot.</p>
+              
+              
             </div>
             <div class="card-footer">
                 <a class="btn btn-primary" role="button" href="{% url 't_timetable' request.user.teacher.id %}">View TimeTable</a>
@@ -106,15 +106,15 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col">
           <div class="card">
+          <h4 class="card-title">Reports</h4>
             <a href="{% url 't_clas' request.user.teacher.id 3 %}">
-                <img class="card-img-top" src="{% static 'info/images/reports.png' %}" alt="">
+                <img class="card-img-top" src="{% static 'info/images/4.png' %}" alt="">
             </a>
             <div class="card-body">
-              <h4 class="card-title">Reports</h4>
-              <p class="card-text">Generate reports for each class. These reports include generating a table consisting
-                    of the students belonging to that class and their respective CIE and Attendance.</p>
+              
+             
             </div>
             <div class="card-footer">
               <a href="{% url 't_clas' request.user.teacher.id 3 %}" class="btn btn-primary">Generate Reports</a>
