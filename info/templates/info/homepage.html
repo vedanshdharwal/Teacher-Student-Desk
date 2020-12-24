@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <title>homepage</title>
-    {% load static %}
+      {% load static %}
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static '/info/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+      <link href="{% static '/info/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
 
     <!-- Custom styles for this template -->
-    <link href="{% static '/info/homepage/css/heroic-features.css' %}" rel="stylesheet" />
-    <link
-      href="{% static '/info/bootstrap/vendor/fontawesome-free/css/all.min.css' %}"
-      rel="stylesheet"
-      type="text/css"
-    />
+      <link href="{% static '/info/homepage/css/heroic-features.css' %}" rel="stylesheet">
+          <link href="{% static '/info/bootstrap/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+
+
   </head>
 
   <body>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav  class="navbar navbar-light"  style="background-color: #4DD0E1 ;">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">CollegeERP</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          <a class="navbar-brand"  href="{% url 'index' %}"><h3>TEACHER - STUDENT DESK</h3></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link text-capitalize">{{ request.user.student.name }}</a>
+                <a class="nav-link text-capitalize">{{ request.user.student.name }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
             </li>
           </ul>
         </div>
@@ -51,88 +46,70 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+   <div class="container"  > 
       <!-- Jumbotron Header -->
-      <header class="jumbotron my-4">
-        <h1 class="display-3 text-capitalize">Welcome {{ request.user.student.name }}</h1>
-        <!-- {#        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>#} -->
-        {# <a href="#" class="btn btn-primary btn-lg">Call to action!</a>#}
+      <header class="jumbotron my-4" style="background-color:#E0F7FA; height:100px ; text-align:center ; padding:20px">
+        <h2 class="display-4 text-capitalize" >Welcome {{ request.user.student.name }}</h2>
+{#        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>#}
+{#        <a href="#" class="btn btn-primary btn-lg">Call to action!</a>#}
       </header>
 
+
       <!-- Page Features -->
-      <div class="row text-center">
-        <div class="col-lg-3 col-md-6 mb-4">
+      <div class="row text-center" >
+
+        <div class="col">
           <div class="card">
-            <a href="{% url 'attendance' request.user.student.USN %}">
-              <img class="card-img-top" src="{% static 'info/images/attendance.jpg' %}" alt="" />
-            </a>
-            <div class="card-body">
-              <h4 class="card-title">Attendance</h4>
-              <p class="card-text">
-                View the attendance status for each of your courses. The attendance of each course is also displayed as
-                list of classes that were conducted.
-              </p>
+          <div class="card-body">
+              <h4 class="card-title">Attendance</h4> 
             </div>
+              <a href="{% url 'attendance' request.user.student.USN %}">
+                <img class="card-img-top" src="{% static 'info/images/3.png' %}" alt="">
+              </a>
+              
             <div class="card-footer">
-              <a class="btn btn-primary" role="button" href="{% url 'attendance' request.user.student.USN %}">
-                View Attendance</a
-              >
+                <a class="btn btn-primary" role="button" href="{% url 'attendance' request.user.student.USN %}"> View Attendance</a>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col">
           <div class="card">
-            <a href="{% url 'marks_list' request.user.student.USN %}">
-              <img class="card-img-top" src="{% static 'info/images/marks.jpg' %}" alt="" />
-            </a>
-            <div class="card-body">
-              <h4 class="card-title">Marks</h4>
-              <p class="card-text">
-                View the marks obtained for each of your courses. These include the marks of 3 internal assessment, 2
-                events and the Semester End Exam
-              </p>
+          <div class="card-body">
+              <h4 class="card-title">Marks</h4>  
             </div>
+              <a href="{% url 'marks_list' request.user.student.USN %}">
+                <img class="card-img-top" src="{% static 'info/images/2.png' %}" alt="">
+              </a>
+              
             <div class="card-footer">
-              <a class="btn btn-primary" role="button" href="{% url 'marks_list' request.user.student.USN %}"
-                >View Marks</a
-              >
+                <a class="btn btn-primary" role="button" href="{% url 'marks_list' request.user.student.USN %}">View Marks</a>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col">
           <div class="card">
-            <a href="{% url 'timetable' request.user.student.class_id_id %}">
-              <img class="card-img-top" src="{% static 'info/images/timetable.png' %}" alt="" />
-            </a>
-            <div class="card-body">
+          <div class="card-body">
               <h4 class="card-title">TimeTable</h4>
-              <p class="card-text">
-                View the timetable in a tabular form. The timetable displays all the courses of the student and the time
-                and day at which they are conducted.
-              </p>
             </div>
+              <a href="{% url 'timetable' request.user.student.class_id_id %}">
+                <img class="card-img-top" src="{% static 'info/images/1.png' %}" alt="">
+              </a>
             <div class="card-footer">
-              <a class="btn btn-primary" role="button" href="{% url 'timetable' request.user.student.class_id_id %}"
-                >View TimeTable</a
-              >
+                <a class="btn btn-primary" role="button" href="{% url 'timetable' request.user.student.class_id_id %}">View TimeTable</a>
             </div>
           </div>
         </div>
+
+
       </div>
       <!-- /.row -->
+
     </div>
     <!-- /.container -->
     <!-- Logout Modal-->
-    <div
-      class="modal fade"
-      id="logoutModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -152,7 +129,10 @@
 
     <!-- Bootstrap core JavaScript -->
 
-    <script src="{% static '/info/homepage/vendor/jquery/jquery.min.js' %}"></script>
+
+      <script src="{% static '/info/homepage/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static '/info/homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
   </body>
+
 </html>
