@@ -34,16 +34,16 @@
 
   <body id="page-top">
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <nav  class="navbar navbar-light" style="background-color: #4DD0E1;">
 
-      <a class="navbar-brand mr-1" href="{% url 'index' %}">CollegeERP</a>
+      <a class="navbar-brand mr-1" href="{% url 'index' %}"><b>TEACHER - STUDENT DESK</b></a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
       </button>
 
       <!-- Navbar -->
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse"  id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 {% if request.user.is_student %}
@@ -63,53 +63,53 @@
     <div id="wrapper">
 
       <!-- Sidebar -->
-      <ul class="sidebar navbar-nav">
+      <ul class="sidebar navbar-nav"  style="background-color: #E0F7FA;" >
             <li class="nav-item">
               <a class="nav-link" href="{% url 'index' %}">
-                <span>Home</span>
+                <span style="color:black">Home</span>
               </a>
             </li>
         {% if request.user.is_student %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'attendance' request.user.student.USN %}">
-                <span>Attendance</span>
+                <span style="color:black">Attendance</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'attendance' request.user.student.USN %}">
-                <span>Attendance By Subject</span>
+                <span style="color:black">Attendance By Subject</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'marks_list' request.user.student.USN %}">
-                <span>Marks</span>
+                <span style="color:black">Marks</span>
               </a>
             </li>
               <li class="nav-item">
               <a class="nav-link" href="{% url 'timetable' request.user.student.class_id_id %}">
-                <span>Time Table</span>
+                <span style="color:black">Time Table</span>
               </a>
             </li>
 
         {% elif request.user.is_teacher %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 't_clas' request.user.teacher.id 1 %}">
-                <span>Attendance</span>
+                <span style="color:black">Attendance</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 't_clas' request.user.teacher.id 2 %}">
-                <span>Marks</span>
+                <span style="color:black">Marks</span>
               </a>
             </li>
               <li class="nav-item">
               <a class="nav-link" href="{% url 't_timetable' request.user.teacher.id %}">
-                <span>Time Table</span>
+                <span style="color:black">Time Table</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 't_clas' request.user.teacher.id 3 %}">
-                <span>Reports</span>
+                <span style="color:black">Reports</span>
               </a>
             </li>
         {% endif %}
